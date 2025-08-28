@@ -23,5 +23,5 @@ let package = Package(
             dependencies: ["PythonKit"]
         ),
     ],
-    swiftLanguageModes: [.v6]
+    swiftLanguageModes: [.v5]
 )
