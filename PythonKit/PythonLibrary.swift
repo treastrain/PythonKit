@@ -30,6 +30,7 @@ import WinSDK
 //===----------------------------------------------------------------------===//
 
 public struct PythonLibrary {
+    @MainActor
     public enum Error: Swift.Error, Equatable, CustomStringConvertible {
         case pythonLibraryNotFound
 

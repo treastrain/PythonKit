@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version: 6.2
 
 import PackageDescription
 
@@ -13,11 +13,15 @@ let package = Package(
     targets: [
         .target(
             name: "PythonKit",
-            path: "PythonKit"
+            path: "PythonKit",
+            swiftSettings: [
+                .defaultIsolation(MainActor.self)
+            ]
         ),
         .testTarget(
             name: "PythonKitTests",
             dependencies: ["PythonKit"]
         ),
-    ]
+    ],
+    swiftLanguageModes: [.v6]
 )

@@ -37,7 +37,7 @@ typealias OwnedPyObjectPointer = PyObjectPointer
 //   `PythonObject` will define copy constructors, move constructors, etc. to
 //   implement move semantics.
 @usableFromInline @_fixed_layout
-final class PyReference {
+nonisolated final class PyReference {
     private var pointer: OwnedPyObjectPointer
 
     // This `PyReference`, once deleted, will make no delta change to the
@@ -207,6 +207,7 @@ public extension PythonObject {
 }
 
 /// An error produced by a failable Python operation.
+@MainActor
 public enum PythonError : Error, Equatable {
     /// A Python runtime exception, produced by calling a Python function.
     case exception(PythonObject, traceback: PythonObject?)
